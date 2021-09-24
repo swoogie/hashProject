@@ -1,11 +1,11 @@
 main: 
-	g++ -O3 main.cpp -o main.exe
+	g++ -O3 main.cpp read.cpp hashing.cpp rng.cpp -o main.exe
 
 compile:
-	g++ -c main.cpp -o 
+	g++ -c main.cpp read.cpp hashing.cpp rng.cpp -o 
 
 link:
-	g++ -o main.exe main.o
+	g++ -o main.exe main.o read.o
 
 del:
 
