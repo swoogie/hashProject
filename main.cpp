@@ -34,6 +34,9 @@ void indexInput(string input){
         cout << "hash of loremA.txt: " << hashFun(read("loremA.txt")) << "\n";
         cout << "hash of loremB.txt: " << hashFun(read("loremB.txt")) << "\n";
     }
+    else if(input == "4"){
+        cout << "hash of empty.txt: " << hashFun(read("empty.txt")) << "\n";
+    }
     else{
         cout << "enter valid value \n0 - for manual input \n1 - for comparison of 2 files w/ 1 different character \n2 - for 2 files with > 1000 randomly generated characters\n";
         cout << "3 - for 2 identical different by 1 character \n";
@@ -45,7 +48,8 @@ void indexInput(string input){
 int main(){
     string input;
     cout << "0 - for manual input \n1 - for comparison of 2 files w/ 1 different character \n2 - for 2 files with > 1000 randomly generated characters\n";
-    cout << "3 - for 2 identical different by 1 character \n";
+    cout << "3 - for 2 identical files different by 1 character \n";
+    cout << "4 - for empty file \n";
     cin >> input;
 
     indexInput(input);
