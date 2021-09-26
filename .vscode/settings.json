@@ -42,6 +42,10 @@
         "xstddef": "cpp",
         "xtr1common": "cpp",
         "xutility": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "algorithm": "cpp",
+        "chrono": "cpp",
+        "ratio": "cpp",
+        "vector": "cpp"
     }
 }

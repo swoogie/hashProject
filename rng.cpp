@@ -13,17 +13,15 @@ class randChar{
         std::uniform_int_distribution<> range;
 };
 
-string getRandomString(){
-    string randomText = "";
-    randChar rand(33, 126);
+void fillFile(std::ofstream &pr){
     for(int i=0; i<1001; i++){
-        char charRand = rand();
-        randomText += charRand;
+        char charizard = rand();
+        pr << charizard;
     }
-    return randomText;
 }
 
 void generateTextFile(string newFileName){   
+    randChar rand(33, 126);
     std::ofstream pr(newFileName);
-    pr << getRandomString();
+    fillFile(pr);
 }
