@@ -2,6 +2,7 @@
 #define HASHING_HPP
 
 #include "read.hpp"
+#include <chrono>
 
 using std::stringstream;
 using std::ifstream;

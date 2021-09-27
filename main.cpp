@@ -4,6 +4,7 @@
 #include "read.hpp"
 #include "hashing.hpp"
 #include "rng.hpp"
+#include "timer.hpp"
 
 using std::stringstream;
 using std::ifstream;
@@ -37,9 +38,25 @@ void indexInput(string input){
     else if(input == "4"){
         cout << "hash of empty.txt: " << hashFun(read("inputFiles/empty.txt")) << "\n";
     }
+    else if(input == "5"){
+        string line;
+        double timeTook = 0;
+        int iterations = 0;
+        timer timer;
+        ifstream rd("inputFiles/konstitucija.txt");
+        while(!rd.eof()){
+            getline(rd, line);
+            timer.start();
+            hashFun(line);
+            timeTook += timer.duration();
+            iterations++;
+        }
+        cout << "time took to hash each line of konstitucija.txt: " << timeTook << " s." << "\niterations: " << iterations << "\n";
+    }
     else{
         cout << "enter valid value \n0 - for manual input \n1 - for comparison of 2 files w/ 1 different character \n2 - for 2 files with > 1000 randomly generated characters\n";
         cout << "3 - for 2 identical different by 1 character \n";
+        cout << "4 - for empty file \n5 - hash each line of konstitucija.txt\n";
         cin >> input;
         indexInput(input);
     }
@@ -49,7 +66,7 @@ int main(){
     string input;
     cout << "0 - for manual input \n1 - for comparison of 2 files w/ 1 different character \n2 - for 2 files with > 1000 randomly generated characters\n";
     cout << "3 - for 2 identical files different by 1 character \n";
-    cout << "4 - for empty file \n";
+    cout << "4 - for empty file \n5 - hash each line of konstitucija.txt\n";
     cin >> input;
 
     indexInput(input);

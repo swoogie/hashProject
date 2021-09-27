@@ -19,6 +19,6 @@ string hashFun(string str){
         index += int(hashStr[i % hashStrSize]) + i*primeInt*31;
         hexHash += hex[index % 16];
     }
-    return hexHash;
 
+    return hexHash;
 }
