@@ -5,8 +5,12 @@
 #include "hashing.hpp"
 #include "rng.hpp"
 #include "timer.hpp"
+#include "sha1.hpp"
+#include "sha256.hpp"
+#include "md5.hpp"
 
 using std::stringstream;
+using std::ofstream;
 using std::ifstream;
 using std::string;
 using std::cout;
@@ -39,24 +43,47 @@ void indexInput(string input){
         cout << "hash of empty.txt: " << hashFun(read("inputFiles/empty.txt")) << "\n";
     }
     else if(input == "5"){
-        string line;
         double timeTook = 0;
-        int iterations = 0;
+        double timeTookSHA1 = 0;
+        double timeTookSHA256 = 0;
+        double timeTookMD5 = 0;
+
         timer timer;
         ifstream rd("inputFiles/konstitucija.txt");
+        string line;
         while(!rd.eof()){
             getline(rd, line);
-            timer.start();
+
+            timer.reset();
             hashFun(line);
-            timeTook += timer.duration();
-            iterations++;
+            timeTook += timer.returnDuration();
+
+            timer.reset();
+            sha1(line);
+            timeTookSHA1 += timer.returnDuration();
+
+            timer.reset();
+            sha256(line);
+            timeTookSHA256 += timer.returnDuration();
+
+            timer.reset();
+            md5(line);
+            timeTookMD5 += timer.returnDuration();
         }
-        cout << "time took to hash each line of konstitucija.txt: " << timeTook << " s." << "\niterations: " << iterations << "\n";
+        cout << "\ntime took to hash each line of konstitucija.txt: " << timeTook << " s.\n";
+        cout << "SHA1: " << timeTookSHA1 << " s.\n";
+        cout << "SHA256: " << timeTookSHA256 << " s.\n";
+        cout << "MD5: " << timeTookMD5 << " s.\n";
+    }
+    else if(input == "6"){
+        generateStrings();
+        cout << "check pairHashes.txt";
     }
     else{
         cout << "enter valid value \n0 - for manual input \n1 - for comparison of 2 files w/ 1 different character \n2 - for 2 files with > 1000 randomly generated characters\n";
         cout << "3 - for 2 identical different by 1 character \n";
         cout << "4 - for empty file \n5 - hash each line of konstitucija.txt\n";
+        cout << "6 - generate and hash various pairs of strings\n";
         cin >> input;
         indexInput(input);
     }
@@ -67,6 +94,7 @@ int main(){
     cout << "0 - for manual input \n1 - for comparison of 2 files w/ 1 different character \n2 - for 2 files with > 1000 randomly generated characters\n";
     cout << "3 - for 2 identical files different by 1 character \n";
     cout << "4 - for empty file \n5 - hash each line of konstitucija.txt\n";
+    cout << "6 - generate and hash various pairs of strings\n";
     cin >> input;
 
     indexInput(input);

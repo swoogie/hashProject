@@ -20,7 +20,5 @@ stringstream returnBuff(string fileName){
 string read(string fileName){
     stringstream buff = returnBuff(fileName);
     string readFile = buff.str();
-    // stringstream().swap(buff); buff.str(""); buff.clear();
-    // cout << readFile << std::endl;
     return readFile;
 }
