@@ -32,7 +32,7 @@ Terminal command for running:
 6. Generation and hashing of various pairs of strings
 7. (To be implemented) Bit and hex comparison
 ---
-#### Documentation
+## Documentation
 ---
 Length of output is the same(64 bytes) regardless of input
 ### 0. Manual input
