@@ -37,7 +37,7 @@ Terminal command for running:
 Hashing function seemingly meets all hashing requirements
 ### Shortcomings
 It has yet to be tested more thoroughly
-
+---
 ### 0. Manual input
 ```
 input: 
