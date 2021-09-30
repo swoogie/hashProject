@@ -78,6 +78,7 @@ SHA1: 0.003003 s.
 SHA256: 0.004011 s.
 MD5: 0.001001 s.
 ```
+---
 ### 6. Generation and hashing of various pairs of strings
 ```
 number of identical hashes: 0
