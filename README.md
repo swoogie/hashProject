@@ -33,7 +33,11 @@ Terminal command for running:
 7. (To be implemented) Bit and hex comparison
 ---
 ## Documentation
-Length of output is the same(64 bytes) regardless of input
+### Strengths
+Hashing function seemingly meets all hashing requirements
+### Shortcomings
+It has yet to be tested more thoroughly
+
 ### 0. Manual input
 ```
 input: 
