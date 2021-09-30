@@ -3,6 +3,6 @@
 
 #include <random>
 
-int getIntegerInRange(int, int);
+int getRandomInteger(int, int);
 
 #endif

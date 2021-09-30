@@ -4,7 +4,7 @@
 void fillFile(std::ofstream &pr){
     for(int i=0; i<1001; i++){
         char charizard = rand();
-        pr << char(getIntegerInRange(33, 126));
+        pr << char(getRandomInteger(33, 126));
     }
 }
 
@@ -16,7 +16,7 @@ void generateTextFile(string newFileName){
 void getRandomStream(int stringSize, stringstream &stream){
         
         for(int i=0 ; i<stringSize; i++){
-            stream << char(getIntegerInRange(33, 126));
+            stream << char(getRandomInteger(33, 126));
         }
 } 
 
