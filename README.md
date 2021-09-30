@@ -35,6 +35,7 @@ Terminal command for running:
 ## Documentation
 ---
 ### Length of output is the same(64 bytes) regardless of input
+---
 ### 0. Manual input
 ```
 input: 
@@ -82,5 +83,6 @@ MD5: 0.001001 s.
 number of identical hashes: 0
 check pairHashes.txt
 ```
+---
 ### 7. WIP
 
