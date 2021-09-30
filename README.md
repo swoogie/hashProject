@@ -33,8 +33,12 @@ Terminal command for running:
 7. (To be implemented) Bit and hex comparison
 ---
 ## Documentation
+### Strengths
+Hashing function seemingly meets all hashing requirements
+### Shortcomings
+It has yet to be tested more thoroughly
+
 ---
-### Length of output is the same(64 bytes) regardless of input
 ### 0. Manual input
 ```
 input: 
@@ -77,10 +81,12 @@ SHA1: 0.003003 s.
 SHA256: 0.004011 s.
 MD5: 0.001001 s.
 ```
+---
 ### 6. Generation and hashing of various pairs of strings
 ```
 number of identical hashes: 0
 check pairHashes.txt
 ```
+---
 ### 7. WIP
 
