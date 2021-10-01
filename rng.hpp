@@ -14,6 +14,10 @@ using std::string;
 
 void generateTextFile(string newFileName);
 
+double generateStrings2();
+
 void generateStrings();
+
+
 
 #endif

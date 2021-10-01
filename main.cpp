@@ -79,11 +79,15 @@ void indexInput(string input){
         generateStrings();
         cout << "check pairHashes.txt";
     }
+    else if(input == "7"){
+        cout << generateStrings2() << "%";
+    }
     else{
         cout << "enter valid value \n0 - for manual input \n1 - for comparison of 2 files w/ 1 different character \n2 - for 2 files with > 1000 randomly generated characters\n";
         cout << "3 - for 2 identical different by 1 character \n";
         cout << "4 - for empty file \n5 - hash each line of konstitucija.txt\n";
         cout << "6 - generate and hash various pairs of strings\n";
+        cout << "7 - hash similarity\n";
         cin >> input;
         indexInput(input);
     }
@@ -95,6 +99,7 @@ int main(){
     cout << "3 - for 2 identical files different by 1 character \n";
     cout << "4 - for empty file \n5 - hash each line of konstitucija.txt\n";
     cout << "6 - generate and hash various pairs of strings\n";
+    cout << "7 - hash similarity\n";
     cin >> input;
 
     indexInput(input);

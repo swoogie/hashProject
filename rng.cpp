@@ -49,3 +49,31 @@ void generateStrings(){
     std::ofstream pr("pairHashes.txt");
     pr << allPairs.str();
 }
+
+double generateStrings2(){
+    double similarity = 0;
+    for(int j=0;j<100000;j++){
+        stringstream pairEl1;
+        getRandomStream(1000, pairEl1);
+        string pair1 = pairEl1.str();
+        string pair2 = pair1;
+
+        while(pair1 == pair2){
+            char character = getRandomInteger(33,126);
+            pair2[getRandomInteger(0,1000)] = character;
+        }
+
+        string hash1 = hashFun(pair1);
+        string hash2 = hashFun(pair2);
+        
+        double identical = 0;
+        for(int i=0;i<hash1.size(); i++){
+            if(hash1[i] == hash2[i]){
+                identical++;
+            } 
+        }
+        similarity += (identical*100/64);
+    }
+    
+    return similarity/100000;
+}
