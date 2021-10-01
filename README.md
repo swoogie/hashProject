@@ -88,5 +88,8 @@ number of identical hashes: 0
 check pairHashes.txt
 ```
 ---
-### 7. WIP
+### 7. Hash similarity
+```
+hashes are similar by: 6.42614 %
+```
 
