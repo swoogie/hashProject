@@ -6,6 +6,7 @@
 
 generatedFile1.txt
 generatedFile2.txt
+pairHashes.txt
 
 *.exe
 
