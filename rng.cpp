@@ -50,8 +50,9 @@ void generateStrings(){
     pr << allPairs.str();
 }
 
-double generateStrings2(){
+void generateStrings2(){
     double similarity = 0;
+    double similarityBin = 0;
     for(int j=0;j<100000;j++){
         stringstream pairEl1;
         getRandomStream(1000, pairEl1);
@@ -67,13 +68,35 @@ double generateStrings2(){
         string hash2 = hashFun(pair2);
         
         double identical = 0;
-        for(int i=0;i<hash1.size(); i++){
+        for(int i=0; i<hash1.size(); i++){
             if(hash1[i] == hash2[i]){
                 identical++;
             } 
         }
         similarity += (identical*100/64);
+
+        stringstream binaryStream1;
+        for(int i=0; i<hash1.size(); i++){    
+            binaryStream1 << std::bitset<8>(hash1.c_str()[i]);
+        }
+        string binaryHash1 = binaryStream1.str();
+        
+        stringstream binaryStream2;
+        for(int i=0; i<hash2.size(); i++){    
+            binaryStream2 << std::bitset<8>(hash2.c_str()[i]);
+        }
+        string binaryHash2 = binaryStream2.str();
+
+        double identicalBin = 0;
+        for(int i=0; i<binaryHash1.size(); i++){
+            if(binaryHash1[i] == binaryHash2[2])
+            {
+                identicalBin++;
+            }
+        }
+        similarityBin += (identicalBin*100/(binaryHash1.size()));
+
     }
-    
-    return similarity/100000;
+    cout << "binary similarity: " << similarityBin/100000 << "%\n";
+    cout << "hex similarity: " << similarity/100000 << "%";
 }

@@ -1,6 +1,8 @@
 #ifndef RNG_HPP
 #define RNG_HPP
 
+#include <bitset>
+#include <string>
 #include <vector>
 #include <iostream>
 #include <random>
@@ -14,7 +16,7 @@ using std::string;
 
 void generateTextFile(string newFileName);
 
-double generateStrings2();
+void generateStrings2();
 
 void generateStrings();
 

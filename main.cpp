@@ -80,7 +80,8 @@ void indexInput(string input){
         cout << "check pairHashes.txt";
     }
     else if(input == "7"){
-        cout << "hashes are similar by: " << generateStrings2() << " %";
+        generateStrings2();
+        
     }
     else{
         cout << "enter valid value \n0 - for manual input \n1 - for comparison of 2 files w/ 1 different character \n2 - for 2 files with > 1000 randomly generated characters\n";
