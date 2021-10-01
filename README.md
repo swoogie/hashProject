@@ -90,6 +90,7 @@ check pairHashes.txt
 ---
 ### 7. Hash similarity
 ```
-hashes are similar by: 6.42614 %
+binary similarity: 43.8492%
+hex similarity: 6.43867%
 ```
 
